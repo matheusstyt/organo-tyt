@@ -1,0 +1,20 @@
+.formulario{
+    width: 70%;
+    margin: 1em auto;
+    background-color: #e0e9ee;
+    padding: 2em;
+  
+}
+.formulario h2{
+    text-align: center;
+    font-weight: 400;
+    font-family: "Times New Roman";
+    color: rgb(36, 36, 36);
+}
+.enviar{
+    background-color: rgb(44, 103, 221);
+    border-radius: 5px;
+    padding: 1em;
+    color: #fff;
+    border: none;
+}

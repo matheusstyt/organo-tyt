@@ -1,0 +1,9 @@
+.banner-back{
+    background-image: url("/public/img/banner.png");
+    width: 100%;
+    aspect-ratio: 16/4;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #6278f7;
+}

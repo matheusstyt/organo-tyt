@@ -1,8 +1,9 @@
 import "./Banner.css"
-function Banner (){
+
+export const Banner =  () => {
     return(
-        <img id="banner" src="/img/banner.png" alt="banner" />
+        <div className="banner-back" id="">
+
+        </div>
     )
 }
-
-export default Banner
