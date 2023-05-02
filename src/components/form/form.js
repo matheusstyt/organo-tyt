@@ -4,23 +4,15 @@ import "./form.css"
 import Enviar from "./button" 
 import { useState } from "react"
 
-const itens = [
-    "Back-end",
-    "Front-end",
-    "QA",
-    "UX",
-    "DBA"
-]
-
-export const Form = () =>{
+export const Form = (props) =>{
     const [nome, setNome] = useState("");
     const [cargo, setCargo] = useState("");
     const [imagem, setImagem] = useState("");
+    const [time, setTime] = useState("");
     const Salvar = (e) =>{
         
-        console.log(nome);
-        console.log(cargo);
-        console.log(imagem);
+
+        props.cadastrar({nome, cargo, imagem, time})
         e.preventDefault();
         
     }
@@ -45,7 +37,12 @@ export const Form = () =>{
                 change={valor => setImagem(valor)}
                 />
                  
-            <Dropdown itens={itens} label="Time" />
+            <Dropdown 
+                itens={props.teams} 
+                label="Time" 
+                valor={time}
+                change={valor => setTime(valor)}
+                />
             <Enviar>
                 Criar Card
             </Enviar>

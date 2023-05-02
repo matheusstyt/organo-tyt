@@ -1,0 +1,18 @@
+.team-container{
+    text-align: center;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.team-container h3{
+    
+    font-size: 32px;
+    border-bottom: 4px solid;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+.colaboradores{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em 0;
+}
