@@ -3,50 +3,77 @@ import './App.css';
 import Banner from './components/banner'
 import Formulario from './components/form';
 import Team from './components/team';
+
+import { v4 as uuidv4 } from 'uuid';
+
 function App() {
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       nome : "Programação",
-      corPrimaria : "#57c278",
-      corSecundaria : "#d9f7e9"
+      cor : "#57c278",
+      id : uuidv4()
     },
     {
       nome : "Front-End",
-      corPrimaria : "#82cffa",
-      corSecundaria : "#e8f8ff"
+      cor : "#82cffa",
+      id : uuidv4()
     },
     {
       nome : "Data Sciense",
-      corPrimaria : "#a6d157",
-      corSecundaria : "#f0f8e2"
+      cor : "#a6d157",
+      id : uuidv4()
     },
     {
       nome : "Devops",
-      corPrimaria : "#e06b69",
-      corSecundaria : "#fde7e8"
+      cor : "#e06b69",
+      id : uuidv4()
     },
     {
       nome : "UX e Design",
-      corPrimaria : "#d86ebf",
-      corSecundaria : "#fae5f5"
+      cor : "#d86ebf",
+      id : uuidv4()
     },
     {
       nome : "Mobile",
-      corPrimaria : "#feba05",
-      corSecundaria : "#fff5d9"
+      cor : "#feba05",
+      id : uuidv4()
     },
     {
       nome : "DBA",
-      corPrimaria : "#ff8a29",
-      corSecundaria : "#ffeedf"
+      cor : "#ff8a29",
+      id : uuidv4()
     },
-  ]
-  const [colaboradores, setColaboradores] = useState([]); 
-  
+  ]);
+
+  const [colaboradores, setColaboradores] = useState([
+    {
+      id : uuidv4(),
+      nome: "Matheus G",
+      cargo : "Desenvolvedor Jr",
+      imagem : "https://github.com/matheusstyt.png",
+      time : "Devops"
+    }
+  ]); 
+  function new_team(time){
+    setTeams([...teams, time])
+  }
   function new_colaborador(colaborador) {
-
     setColaboradores([...colaboradores, colaborador])
+  }
+  function deletar_colaborador(id){
+    setColaboradores(colaboradores.filter( colaborador => colaborador.id !== id));
+    
+    alert(id)
+  }
+  function mudar_cor_time(cor, id){
 
+    setTeams(teams.map( time => {
+
+      if(time.id === id){
+        time.cor = cor;
+      }
+      return time;
+    }))
   }
   return (
     <div className="App"> 
@@ -58,14 +85,17 @@ function App() {
       </header>
       <Formulario
         cadastrar={colaborador => new_colaborador(colaborador) }
+        cadastrar_time={time => new_team(time)}
         teams={ teams.map( team => team.nome)}
       />
       {  teams.map(  team => <Team 
           colaboradores={colaboradores.filter( colaborador => colaborador.time === team.nome)}
           key={team.nome}
+          id={team.id}
           nome={team.nome} 
-          corPrimaria={team.corPrimaria} 
-          corSecundaria={team.corSecundaria} 
+          mudar_cor={mudar_cor_time}
+          cor={team.cor} 
+   deletar={deletar_colaborador}
         />)}
 
     </div>

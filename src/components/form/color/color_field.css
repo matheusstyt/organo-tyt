@@ -1,0 +1,7 @@
+.color-field{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    padding: 1em 0;
+}

@@ -1,0 +1,6 @@
+input, label, option, select{ 
+    color: rgb(62, 62, 62);
+  }
+input:focus, select:focus{
+    outline-color: rgba(17, 101, 211, 0.831);
+}

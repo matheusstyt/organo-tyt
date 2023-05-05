@@ -1,7 +1,12 @@
+.container-form{
+    display: flex;
+    flex-flow: row wrap;
+}
 .formulario{
-    width: 70%;
+    width: 45%;
     margin: 1em auto;
     background-color: #e0e9ee;
+    border-radius: 1em;
     padding: 2em;
   
 }

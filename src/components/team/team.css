@@ -2,6 +2,7 @@
     text-align: center;
     padding: 32px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .team-container h3{
@@ -11,8 +12,14 @@
     display: inline-block;
     padding-bottom: 8px;
 }
+.team-container .input-color{
+    position: absolute;
+    top: 5%;
+    right: 4%;
+}
 .colaboradores{
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     padding: 1em 0;
 }
